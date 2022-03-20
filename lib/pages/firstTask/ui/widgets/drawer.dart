@@ -10,12 +10,12 @@ class CustomDrawer extends StatefulWidget {
 
 class _CustomDrawerState extends State<CustomDrawer> {
   List<String> menuSvgImages = [
-    AppSvgImages.home_ic,
-    AppSvgImages.successes_ic,
-    AppSvgImages.settings_ic,
-    AppSvgImages.review_ic,
-    AppSvgImages.prompt_ic,
-    AppSvgImages.share_ic,
+    AppSvgImages.homeIcon,
+    AppSvgImages.successesIcon,
+    AppSvgImages.settingsIcon,
+    AppSvgImages.reviewIcon,
+    AppSvgImages.promptIcon,
+    AppSvgImages.shareIcon,
   ];
 
   List<String> menuItemsTexts = [
@@ -62,14 +62,14 @@ class _CustomDrawerState extends State<CustomDrawer> {
             bottom: 0,
             left: 0,
             child: SvgPicture.asset(
-              AppSvgImages.back_in_drawer_1_ic,
+              AppSvgImages.back_in_drawer_1_Icon,
             ),
           ),
           Positioned(
             bottom: 0,
             left: 0,
             child: SvgPicture.asset(
-              AppSvgImages.back_in_drawer_2_ic,
+              AppSvgImages.back_in_drawer_2_Icon,
             ),
           ),
           Positioned(
@@ -85,7 +85,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                   ),
                   child: Text(
                     'Instruments'.toUpperCase(),
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 18,
                       decoration: TextDecoration.underline,
                       color: AppColors.textColor,
@@ -95,7 +95,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                 SizedBox(
                   height: getProportionateScreenHeight(30),
                 ),
-                Container(
+                SizedBox(
                   height: getProportionateScreenHeight(380),
                   width: getProportionateScreenWidth(211),
                   child: ListView.separated(
@@ -115,12 +115,12 @@ class _CustomDrawerState extends State<CustomDrawer> {
                           horizontal: getProportionateScreenWidth(24),
                         ),
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.only(
+                          borderRadius: const BorderRadius.only(
                             topRight: Radius.circular(25),
                             bottomRight: Radius.circular(25),
                           ),
                           color: menuItemSelected[index]
-                              ? Color(0xffFFFFFF).withOpacity(0.7)
+                              ? const Color(0xffFFFFFF).withOpacity(0.7)
                               : Colors.white.withOpacity(0),
                         ),
                         child: Row(

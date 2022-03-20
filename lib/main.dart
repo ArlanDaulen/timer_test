@@ -1,22 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:timer/pages/ui/main_page.dart';
+import 'package:timer/pages/advanced_task/ui/advanced_task.dart';
+import 'package:timer/pages/firstTask/ui/main_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  bool isFirsTask = false;
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Timer',
-      home:  MainPage(),
+      title: isFirsTask ? 'Timer' : 'Task List',
+      home: isFirsTask ? const MainPage() : const AdvancedTaskScreen(),
     );
   }
 }
-
-

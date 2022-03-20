@@ -57,7 +57,11 @@ class MainPageProvider extends BaseBloc {
   setEclipseCount(double value) {
     isTimeUp = false;
     isTimerStart = false;
-    mainTimer!.cancel();
+    try {
+      mainTimer!.cancel();
+    } catch (e) {
+      log("$e");
+    }
 
     thirtySecondsCount = sliderValue ~/ 30;
     timedUpThirtySecondEclipses =

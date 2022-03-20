@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'package:timer/pages/provider/main_page_provider.dart';
+import 'package:timer/pages/firstTask/provider/main_page_provider.dart';
 import 'package:timer/shared/size_config.dart';
 
 class ThirtySecondEclipse extends StatefulWidget {

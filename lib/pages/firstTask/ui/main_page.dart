@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:timer/base/base_provider.dart';
-import 'package:timer/pages/provider/main_page_provider.dart';
-import 'package:timer/pages/ui/widgets/drawer.dart';
-import 'package:timer/pages/ui/widgets/start_stop_button.dart';
-import 'package:timer/pages/ui/widgets/thirty_second_eclipses_count.dart';
-import 'package:timer/pages/ui/widgets/timer_slider.dart';
+import 'package:timer/pages/firstTask/provider/main_page_provider.dart';
+import 'package:timer/pages/firstTask/ui/widgets/drawer.dart';
+import 'package:timer/pages/firstTask/ui/widgets/start_stop_button.dart';
+import 'package:timer/pages/firstTask/ui/widgets/thirty_second_eclipses_count.dart';
+import 'package:timer/pages/firstTask/ui/widgets/timer_slider.dart';
 import 'package:timer/shared/size_config.dart';
 import 'package:timer/shared/theme.dart';
 
@@ -45,7 +45,7 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
                   Positioned(
                     top: getProportionateScreenHeight(148),
                     child: Image.asset(
-                      AppPngImages.home_ic,
+                      AppPngImages.homeIcon,
                       width: getProportionateScreenWidth(374),
                       height: getProportionateScreenHeight(355),
                     ),
@@ -84,20 +84,22 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
                     right: getProportionateScreenWidth(10),
                     bottom: getProportionateScreenHeight(50),
                     child: Center(
-                      child: StartStopButton(model: model,),
+                      child: StartStopButton(
+                        model: model,
+                      ),
                     ),
                   ),
                   Positioned(
                     left: getProportionateScreenWidth(10),
                     bottom: getProportionateScreenHeight(65),
-                    child: SvgPicture.asset(AppSvgImages.menu_ic),
+                    child: SvgPicture.asset(AppSvgImages.menuIcon),
                   ),
                   Positioned(
                     left: 0,
                     bottom: getProportionateScreenHeight(35),
                     child: GestureDetector(
                         onTap: () => model.globalKey.currentState!.openDrawer(),
-                        child: SvgPicture.asset(AppSvgImages.drawer_ic)),
+                        child: SvgPicture.asset(AppSvgImages.drawerIcon)),
                   ),
                 ],
               ),
