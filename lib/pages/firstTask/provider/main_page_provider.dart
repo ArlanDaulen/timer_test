@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:developer';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:timer/base/base_bloc.dart';
 import 'package:timer/shared/size_config.dart';
@@ -14,6 +13,7 @@ class MainPageProvider extends BaseBloc {
   Timer? mainTimer;
   Duration? duration;
   List<bool> timedUpThirtySecondEclipses = [];
+  double progressPercent = 0;
 
   GlobalKey<ScaffoldState> globalKey = GlobalKey<ScaffoldState>();
 
@@ -109,7 +109,8 @@ class MainPageProvider extends BaseBloc {
         } else {
           duration =
               Duration(seconds: duration!.inSeconds - oneSecond.inSeconds);
-
+          progressPercent = (1 - (duration!.inSeconds / sliderValue.toInt()));
+          // log(((1 - (duration!.inSeconds / sliderValue.toInt())) ).toString());
           notifyListeners();
         }
       });
